@@ -1,0 +1,21 @@
+.shape1 {
+    position: absolute;
+    top: 66%;
+    width: 500px;
+    height: 500px;
+    background-color: #F05326;
+    border-radius: 50%;
+    left: 0%;
+    transform: translateX(-50%);
+}
+
+.shape2 {
+    position: absolute;
+    top: 66%;
+    width: 500px;
+    height: 500px;
+    background-color: #F05326;
+    border-radius: 50%;
+    right: 0;
+    transform: translateX(50%);
+}

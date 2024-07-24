@@ -1,3 +1,4 @@
+import zIndex from "@mui/material/styles/zIndex";
 import { color } from "../colors/colors";
 
 export const styles = {
@@ -25,7 +26,7 @@ export const styles = {
         position: "fixed",
         width: "100%",
         top: "0",
-        zIndex: 500550550505
+        zIndex: 500550550505888
     },
     navbar: {
         display: "flex",
@@ -35,7 +36,8 @@ export const styles = {
         color: color.white,
         position: "relative",
         width: "80%",
-        top: "0"
+        top: "0",
+        zIndex: 500550550505888
     },
     navbarLink: {
         color: color.white,
@@ -60,6 +62,29 @@ export const styles = {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center"
+    },
+    services: {
+        padding:'10% 0',
+        position: "relative",
+        background:
+            "url('../../../public/product4.png') no-repeat center center/cover",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        flexDirection:'column',
+        gap:'50px'
+    },
+    about: {
+        padding:'5% 0',
+        position: "relative",
+        backgroundColor:color.cardColor,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        flexDirection:'column',
+        gap:'50px',
     },
     page2: {
         position: "relative",
