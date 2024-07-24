@@ -1,4 +1,4 @@
-.shape1 {
+.shape3 {
     position: absolute;
     top: 66%;
     width: 500px;
@@ -9,7 +9,7 @@
     transform: translateX(-50%);
 }
 
-.shape2 {
+.shape4 {
     position: absolute;
     top: 66%;
     width: 500px;

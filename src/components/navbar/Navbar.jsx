@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import { color } from "../../colors/colors";
 import { styles } from "../../styles/styles";
 
 const Navbar = () => {
@@ -23,7 +22,6 @@ const Navbar = () => {
                         to="home"
                         spy={true}
                         smooth={true}
-                        offset={-70}
                         duration={500}
                         style={selected === "home" ? {...styles.navbarLink, ...styles.selectedLink} : styles.navbarLink}
                         onClick={() => handleSelectNavbarElement("home")}
@@ -35,7 +33,6 @@ const Navbar = () => {
                         to="solutions"
                         spy={true}
                         smooth={true}
-                        offset={-70}
                         duration={500}
                         style={selected === "solutions" ? {...styles.navbarLink, ...styles.selectedLink} : styles.navbarLink}
                         onClick={() => handleSelectNavbarElement("solutions")}
@@ -47,7 +44,6 @@ const Navbar = () => {
                         to="prices"
                         spy={true}
                         smooth={true}
-                        offset={-70}
                         duration={500}
                         style={selected === "prices" ? {...styles.navbarLink, ...styles.selectedLink} : styles.navbarLink}
                         onClick={() => handleSelectNavbarElement("prices")}
@@ -59,7 +55,6 @@ const Navbar = () => {
                         to="services"
                         spy={true}
                         smooth={true}
-                        offset={-70}
                         duration={500}
                         style={selected === "services" ? {...styles.navbarLink, ...styles.selectedLink} : styles.navbarLink}
                         onClick={() => handleSelectNavbarElement("services")}
@@ -71,7 +66,6 @@ const Navbar = () => {
                         to="about"
                         spy={true}
                         smooth={true}
-                        offset={-70}
                         duration={500}
                         style={selected === "about" ? {...styles.navbarLink, ...styles.selectedLink} : styles.navbarLink}
                         onClick={() => handleSelectNavbarElement("about")}

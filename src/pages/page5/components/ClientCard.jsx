@@ -12,6 +12,7 @@ const ClientCard = ({ children, handleSelectedElement, selected, imageSrc }) => 
                 padding: '20px',
                 display: 'flex',
                 flexDirection: 'column',
+                // alignItems:'center',
                 gap: '20px',
                 borderRadius: '20px',
                 cursor: 'pointer',

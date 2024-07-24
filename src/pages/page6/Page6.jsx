@@ -1,37 +1,16 @@
 import React from "react";
-import { Box, Grid, TextField, Button, useMediaQuery } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box, Grid, useMediaQuery } from "@mui/material";
 import { color } from "../../colors/colors";
 import backgroundImage from "../../../public/productShip.png"; 
 import truckImage from "../../../public/car2.png"; 
-
-const StyledTextField = styled(TextField)({
-    "& .MuiInputBase-root": {
-        backgroundColor: "rgba(255, 255, 255)",
-        borderRadius: "4px",
-        height: "40px",
-        // "& input": {
-        //     textAlign: "center",
-        // },
-    },
-    "& .MuiInputLabel-root": {
-        color: "rgba(0, 0, 0, 0.60)",
-    },
-    "& .MuiOutlinedInput-root": {
-        "& fieldset": {
-            borderColor: "rgba(0, 0, 0, 0.23)",
-        },
-        "&:hover fieldset": {
-            borderColor: "rgba(0, 0, 0, 0.60)",
-        },
-        "&.Mui-focused fieldset": {
-            borderColor: "rgba(0, 0, 0, 0.60)",
-        },
-    },
-});
+import "./page.css";
 
 const Page6 = () => {
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
 
     return (
         <Box
@@ -50,9 +29,13 @@ const Page6 = () => {
                 sx={{
                     textAlign: "center",
                     marginBottom: "20px",
+                    width: '35%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '15px'
                 }}
             >
-                <h2 style={{ color: color.orange }}>Get A Competitive Instant Quote</h2>
+                <h2 style={{ color: color.white }}> <span style={{ color: color.orange }}>Get</span>  A Competitive Instant Quote</h2>
                 <p style={{ color: "white" }}>
                     Fill out the form for LTL and Full Truckload rates. Quick access without login!
                 </p>
@@ -63,8 +46,7 @@ const Page6 = () => {
                 sx={{
                     width: isSmallScreen ? "100%" : "80%",
                     maxWidth: "1200px",
-                    paddingLeft:'0',
-
+                    paddingTop: '60px'
                 }}
             >
                 <Grid item xs={12} md={7}>
@@ -80,86 +62,51 @@ const Page6 = () => {
                             height: "100%",
                         }}
                     >
-                        <Box component="form" sx={{ mt: 2 }}>
+                        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
                             <Grid container spacing={2}>
-                                <Grid item xs={12} sm={6}>
-                                    <StyledTextField
-                                        fullWidth
-                                        label="Pickup Location"
-                                        variant="outlined"
-                                    />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <StyledTextField fullWidth label="Date" variant="outlined" />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <StyledTextField
-                                        fullWidth
-                                        label="Delivery Location"
-                                        variant="outlined"
-                                    />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <StyledTextField fullWidth label="Date" variant="outlined" />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <StyledTextField
-                                        fullWidth
-                                        label="Weight (Tons)"
-                                        variant="outlined"
-                                    />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <StyledTextField
-                                        fullWidth
-                                        label="Load Category"
-                                        variant="outlined"
-                                    />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <StyledTextField
-                                        fullWidth
-                                        label="Company Name"
-                                        variant="outlined"
-                                    />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <StyledTextField fullWidth label="Email" variant="outlined" />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <StyledTextField
-                                        fullWidth
-                                        label="First Number"
-                                        variant="outlined"
-                                    />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <StyledTextField
-                                        fullWidth
-                                        label="Second Number"
-                                        variant="outlined"
-                                    />
-                                </Grid>
+                                {[
+                                    { label: "Pick Location", type: "select", name: "pickLocation", icon: "../../../public/location2.svg" },
+                                    { label: "Pick Date", type: "date", name: "pickDate", icon: "../../../public/date.svg" },
+                                    { label: "Delivery Location", type: "select", name: "deliveryLocation", icon: "../../../public/location2.svg" },
+                                    { label: "Delivery Date", type: "date", name: "deliveryDate", icon: "../../../public/date.svg" },
+                                    { label: "Weight", type: "select", name: "weight", icon: "../../../public/weight.svg" },
+                                    { label: "Load", type: "text", name: "load", icon: "../../../public/load.svg" },
+                                    { label: "Text", type: "text", name: "text", icon: "../../../public/name.svg" },
+                                    { label: "Email", type: "email", name: "email", icon: "../../../public/email.svg" },
+                                    { label: "First Name", type: "text", name: "firstName", icon: "../../../public/phone.svg" },
+                                    { label: "Second Number", type: "text", name: "secondNumber", icon: "../../../public/phone.svg" },
+                                ].map((field, index) => (
+                                    <Grid item xs={12} sm={6} sx={{ paddingTop: '0px', '& .MuiGrid-item':{paddingTop:'0'} }} key={index}>
+                                        <label className="inputLabel" htmlFor={field.name}>{field.label}</label>
+                                        <div className="inputContainer">
+                                            <img  className="inputIcon" src={field.icon}/>
+                                            {field.type === "select" ? (
+                                                <select className="inputStyle" name={field.name} id={field.name} ><option value={field.name} disabled selected hidden> <span style={{color:color.cardColor}} >{field.label}</span> </option></select>
+                                            ) : (
+                                                <input className="inputStyle" type={field.type} name={field.name} id={field.name} placeholder={field.label}/>
+                                            )}
+                                        </div>
+                                    </Grid>
+                                ))}
                             </Grid>
                             <Box sx={{ mt: 3 }}>
-                                <Button
-                                    fullWidth
-                                    variant="contained"
-                                    sx={{
+                                <button
+                                    style={{
                                         backgroundColor: color.orange,
                                         color: color.white,
-                                        padding: "15px 0",
+                                        padding: "15px",
                                         fontSize: "16px",
+                                        width: '100%',
                                         fontWeight: "bold",
                                         borderRadius: "10px",
+                                        border: 'none',
                                         boxShadow: "rgba(240, 83, 38, 0.3) 0px 5px",
-                                        "&:hover": {
-                                            backgroundColor: color.orange,
-                                        },
+                                        cursor: 'pointer',
+                                        transition: "background-color 0.3s ease",
                                     }}
                                 >
                                     Request Your Quote
-                                </Button>
+                                </button>
                             </Box>
                         </Box>
                     </Box>
@@ -180,7 +127,7 @@ const Page6 = () => {
                                 width: "100%",
                                 maxWidth: "500px",
                                 borderRadius: "10px",
-                                height:'100%'
+                                height: '100%'
                             }}
                         />
                     </Box>

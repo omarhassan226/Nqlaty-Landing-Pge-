@@ -1,8 +1,6 @@
 import React from "react";
 import { styles } from "../../styles/styles";
 import { color } from "../../colors/colors";
-import Page2 from "../page2/Page2";
-import OrangeArrow from "../../components/arrow/OrangeArrow";
 
 const Page1 = () => {
     return (

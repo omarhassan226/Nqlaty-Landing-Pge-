@@ -119,11 +119,11 @@ const Page3 = () => {
                     </Grid>
                 </Grid>
             </Box>
-            <Grid container spacing={3} justifyContent="space-around" sx={{ width: "100%", maxWidth: "1200px", paddingTop:'50px' }}>
-                <Grid item xs={12} sm={12} md={4}>
+            <Grid container spacing={3} justifyContent="space-between" sx={{ width: "80%", paddingTop:'50px' }}>
+                <Grid item xs={12} sm={12} md={5} sx={{maxWidth:'100%'}}>
                         <Masonry1 />
                 </Grid>
-                <Grid item xs={12} sm={12} md={4.5}>
+                <Grid item xs={12} sm={12} md={5}>
                         <Box sx={{ textAlign: "left" }}>
                             <Box sx={{ marginBottom: "20px" }}>
                                 <h1 style={{ color: color.orange }}>NQLYAT Loading Platform</h1>

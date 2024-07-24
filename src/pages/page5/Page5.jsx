@@ -1,159 +1,3 @@
-// import React from 'react';
-// import { Box, Grid, Card, CardContent, Typography, Button } from '@mui/material';
-// import { styled } from '@mui/material/styles';
-// import backgroundImage from '../../../public/car3.png'; // Adjust the path to your image
-// console.log(backgroundImage);
-// import OrangeArrow from '../../components/arrow/OrangeArrow';
-
-// const useStyles = styled({
-//     root: {
-//         backgroundImage: `url(${backgroundImage})`,
-//         backgroundSize: 'cover',
-//         backgroundPosition: 'center',
-//         position: 'relative',
-//         color: 'white',
-//         textAlign: 'center',
-//         padding: '50px 20px',
-//     },
-//     overlay: {
-//         position: 'absolute',
-//         top: 0,
-//         left: 0,
-//         width: '100%',
-//         height: '100%',
-//         backgroundColor: 'rgba(0, 0, 0, 0.5)', // Dark overlay
-//         zIndex: 1,
-//     },
-//     content: {
-//         position: 'relative',
-//         zIndex: 2,
-//     },
-//     card: {
-//         backgroundColor: 'rgba(255, 255, 255, 0.1)',
-//         color: 'white',
-//         padding: '20px',
-//         borderRadius: '15px',
-//         textAlign: 'left',
-//         transition: 'transform 0.3s ease, backgroundColor 0.3s ease',
-//         '&:hover': {
-//             transform: 'scale(1.05)',
-//             backgroundColor: 'rgba(255, 255, 255, 0.2)',
-//         },
-//     },
-//     button: {
-//         backgroundColor: 'orange',
-//         color: 'white',
-//         '&:hover': {
-//             backgroundColor: 'darkorange',
-//         },
-//     },
-// });
-
-// const Page5 = () => {
-//     const classes = useStyles();
-
-//     return (
-//         <div className={classes.root}>
-//             <div className={classes.overlay}></div>
-//             <Box className={classes.content}>
-//                 <OrangeArrow />
-//                 <Typography variant="h4" gutterBottom>
-//                     Speeding up the carrier registration process and minimizing risks
-//                 </Typography>
-//                 <Typography variant="h6" gutterBottom>
-//                     "NQLYAT Solutions" offers a comprehensive solution that goes beyond the basic data of tonnage and freight.
-//                 </Typography>
-//                 <Grid container spacing={3} justifyContent="center">
-//                     <Grid item xs={12} sm={6} md={4}>
-//                         <Card className={classes.card}>
-//                             <CardContent>
-//                                 <Typography variant="h5" gutterBottom>
-//                                     1
-//                                 </Typography>
-//                                 <Typography variant="body2">
-//                                     With "NQLYAT Solutions", you can reach a fleet size that is three times larger than what other loading platforms offer to intermediaries.
-//                                 </Typography>
-//                             </CardContent>
-//                         </Card>
-//                     </Grid>
-//                     <Grid item xs={12} sm={6} md={4}>
-//                         <Card className={classes.card}>
-//                             <CardContent>
-//                                 <Typography variant="h5" gutterBottom>
-//                                     2
-//                                 </Typography>
-//                                 <Typography variant="body2">
-//                                     The selected plans include the "NQLYAT Solutions" carrier monitoring service, a service that helps you quickly qualify carriers, avoid risks, track instant loads, and ensure safety compliance.
-//                                 </Typography>
-//                             </CardContent>
-//                         </Card>
-//                     </Grid>
-//                     <Grid item xs={12} sm={6} md={4}>
-//                         <Card className={classes.card}>
-//                             <CardContent>
-//                                 <Typography variant="h5" gutterBottom>
-//                                     3
-//                                 </Typography>
-//                                 <Typography variant="body2">
-//                                     In addition, "NQLYAT Solutions" offers additional services such as registration and cargo tracking. To provide accurate and timely information, we will be connecting to a ready-made network of carriers equipped to track loads instantly.
-//                                 </Typography>
-//                             </CardContent>
-//                         </Card>
-//                     </Grid>
-//                 </Grid>
-//                 <Button variant="contained" className={classes.button} style={{ marginTop: '30px' }}>
-//                     Read More
-//                 </Button>
-//             </Box>
-//             <Box sx={{ marginTop: '50px', textAlign: 'center' }}>
-//                 <Typography variant="h4" style={{ color: 'orange' }}>
-//                     What Our Client Says
-//                 </Typography>
-//                 <Grid container spacing={3} justifyContent="center" style={{ marginTop: '20px' }}>
-//                     <Grid item xs={12} sm={6} md={4}>
-//                         <Card className={classes.card}>
-//                             <CardContent>
-//                                 <Typography variant="h6" gutterBottom>
-//                                     Ahmed
-//                                 </Typography>
-//                                 <Typography variant="body2">
-//                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non dui vitae massa egestas ullamcorper.
-//                                 </Typography>
-//                             </CardContent>
-//                         </Card>
-//                     </Grid>
-//                     <Grid item xs={12} sm={6} md={4}>
-//                         <Card className={classes.card}>
-//                             <CardContent>
-//                                 <Typography variant="h6" gutterBottom>
-//                                     Bakr
-//                                 </Typography>
-//                                 <Typography variant="body2">
-//                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non dui vitae massa egestas ullamcorper.
-//                                 </Typography>
-//                             </CardContent>
-//                         </Card>
-//                     </Grid>
-//                     <Grid item xs={12} sm={6} md={4}>
-//                         <Card className={classes.card}>
-//                             <CardContent>
-//                                 <Typography variant="h6" gutterBottom>
-//                                     Mohamed
-//                                 </Typography>
-//                                 <Typography variant="body2">
-//                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non dui vitae massa egestas ullamcorper.
-//                                 </Typography>
-//                             </CardContent>
-//                         </Card>
-//                     </Grid>
-//                 </Grid>
-//             </Box>
-//         </div>
-//     );
-// };
-
-// export default Page5;
-
 import { Box, Button, Grid, Typography } from "@mui/material";
 import "./page5.css";
 import React, { useState } from "react";
@@ -210,7 +54,7 @@ const Page5 = () => {
                         tonnage and freight.
                     </h3>
                 </Grid>
-                <Grid md={6} sm={12}>
+                <Grid md={6} sm={12} justifyContent={'flex-end'}>
                     <h3 style={{ color: color.white, textAlign: "left", width: "90%" }}>
                         <span style={{ color: color.orange }}>Our customers</span> get
                         exclusive access to the best carrier monitoring services and smooth
@@ -274,7 +118,6 @@ const Page5 = () => {
             >
                 Read More
             </Button>
-            {/* <Box sx={{paddingTop:'100px'}}> */}
                 <Box sx={{paddingTop:'200px'}}>
                     <Typography
                         variant="h5"
@@ -289,14 +132,14 @@ const Page5 = () => {
                     justifyContent="center"
                     sx={{ width: "80%", marginLeft: "0",paddingTop:'50px' }}
                 >
-                    <Grid md={4} sm={12}>
+                    <Grid md={4} sm={12} sx={{display:'flex', justifyContent:'center'}}>
                         <ClientCard>
                             <Box
                                 sx={{
                                     display: "flex",
                                     justifyContent: "center",
                                     gap: "20px",
-                                    flexDirection: 'column'
+                                    flexDirection: 'column',
                                 }}
                             >
                                 <Box sx={{
@@ -342,7 +185,7 @@ const Page5 = () => {
                             </Box>
                         </ClientCard>
                     </Grid>
-                    <Grid md={4} sm={12}>
+                    <Grid md={4} sm={12} sx={{display:'flex', justifyContent:'center'}}>
                         <ClientCard>
                             <Box
                                 sx={{
@@ -395,14 +238,15 @@ const Page5 = () => {
                             </Box>
                         </ClientCard>
                     </Grid>
-                    <Grid md={4} sm={12}>
+                    <Grid md={4} sm={12} sx={{display:'flex', justifyContent:'center'}}>
                         <ClientCard>
                             <Box
                                 sx={{
                                     display: "flex",
                                     justifyContent: "center",
                                     gap: "20px",
-                                    flexDirection: 'column'
+                                    flexDirection: 'column',
+                                    alignContent:'center'
                                 }}
                             >
                                 <Box sx={{
@@ -471,10 +315,8 @@ const Page5 = () => {
                         🡢
                     </span>
                 </Box>
-            {/* </Box> */}
-
-            <Box className="shape1"></Box>
-            <Box className="shape2"></Box>
+            <Box className="shape3"></Box>
+            <Box className="shape4"></Box>
         </Box>
     );
 };
