@@ -1,5 +1,4 @@
 import React from 'react';
-import { color } from '../../../colors/colors';
 
 const ClientCard = ({ children, handleSelectedElement, selected, imageSrc }) => {
     const isSelected = selected === imageSrc;
@@ -12,7 +11,6 @@ const ClientCard = ({ children, handleSelectedElement, selected, imageSrc }) => 
                 padding: '20px',
                 display: 'flex',
                 flexDirection: 'column',
-                // alignItems:'center',
                 gap: '20px',
                 borderRadius: '20px',
                 cursor: 'pointer',

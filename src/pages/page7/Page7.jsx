@@ -15,11 +15,11 @@ const useStyles = {
     leftSection: {
         textAlign: 'left',
         padding: '20px',
-        marginLeft:'10%'
+        marginLeft: '10%'
     },
     logo: {
         marginBottom: '20px',
-        paddingTop:'50px'
+        paddingTop: '50px'
     },
     getInTouch: {
         margin: '20px 0',
@@ -31,38 +31,38 @@ const useStyles = {
     },
     icon: {
         marginRight: '10px',
-        backgroundColor:color.orange,
-        color:"white",
-        borderRadius:'5px',
-        padding:'5px'
+        backgroundColor: color.orange,
+        color: "white",
+        borderRadius: '5px',
+        padding: '5px'
     },
     middleSection: {
         display: 'flex',
         padding: '20px',
-        flexDirection:'column',
-        alignItems:'flex-start',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
         textAlign: 'left',
-        paddingLeft:'20px',
-        marginLeft:'2.5%'
+        paddingLeft: '20px',
+        marginLeft: '2.5%'
     },
     subscribeSection: {
-        backgroundImage:`url('${backgroundImage}')`,
+        backgroundImage: `url('${backgroundImage}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        display:'flex',
+        display: 'flex',
         padding: '20px',
-        flexDirection:'column',
-        alignItems:'flex-start'
+        flexDirection: 'column',
+        alignItems: 'flex-start'
     },
     input: {
         backgroundColor: 'white',
         borderRadius: '10px',
         marginRight: '10px',
-        height:'40px',
-        width:'100%'
+        height: '40px',
+        width: '100%'
     },
     button: {
-        borderRadius:'10px',
+        borderRadius: '10px',
         backgroundColor: '#F05326',
         color: 'white',
         '&:hover': {
@@ -84,10 +84,10 @@ const useStyles = {
 const Page7 = () => {
     return (
         <Box id="footer" sx={useStyles.root}>
-            <Grid container spacing={2} sx={{display:'flex', width:'100%', position:'relative', left:'16px'}}>
+            <Grid container spacing={2} sx={{ display: 'flex', width: '100%', position: 'relative', left: '16px' }}>
                 <Grid item xs={12} md={3} sx={useStyles.leftSection}>
                     <img src={logo} alt="Logo" style={useStyles.logo} />
-                    <Typography variant="h6" sx={{fontSize:'16px'}}>Nqlyat solutions: the leading shipping platform with superior service quality</Typography>
+                    <Typography variant="h6" sx={{ fontSize: '16px' }}>Nqlyat solutions: the leading shipping platform with superior service quality</Typography>
                     <Typography variant="h5" sx={useStyles.getInTouch}>Get in touch</Typography>
                     <Box sx={useStyles.contactInfo}>
                         <img src={emailIcon} alt="Email Icon" style={useStyles.icon} />
@@ -106,9 +106,9 @@ const Page7 = () => {
                         <Typography>360.766.0553</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} md={2} className='middleSection' sx={useStyles.middleSection}>
-                    <Typography variant="h5" sx={{paddingTop:'55px'}}>Company</Typography>
-                    <Typography style={{color:color.orange, paddingTop:'30px'}}>Home</Typography>
+                <Grid item xs={12} md={2} sx={useStyles.middleSection}>
+                    <Typography variant="h5" sx={{ paddingTop: '55px' }}>Company</Typography>
+                    <Typography style={{ color: color.orange, paddingTop: '30px' }}>Home</Typography>
                     <Typography>Solution</Typography>
                     <Typography>Pricing</Typography>
                     <Typography>Services</Typography>
@@ -117,8 +117,8 @@ const Page7 = () => {
                     <Typography>Contact Us</Typography>
                 </Grid>
                 <Grid item xs={12} md={5.5} sx={useStyles.subscribeSection}>
-                    <Typography variant="h5"style={{color:color.orange, paddingTop:'50px', fontWeight:'bold'}}>Subscribe</Typography>
-                    <Box display="flex" justifyContent="center" alignItems="center" sx={{width:'80%'}} mt={2}>
+                    <Typography variant="h5" style={{ color: color.orange, paddingTop: '50px', fontWeight: 'bold' }}>Subscribe</Typography>
+                    <Box display="flex" justifyContent="center" alignItems="center" sx={{ width: '80%' }} mt={2}>
                         <TextField
                             placeholder="Your Email Address"
                             variant="outlined"
@@ -127,7 +127,7 @@ const Page7 = () => {
                         />
                         <Button variant="contained" sx={useStyles.button}>Subscribe</Button>
                     </Box>
-                        <span style={{height:'1px', width:'80%', backgroundColor:'white', marginTop:'10px'}}></span>
+                    <span style={{ height: '1px', width: '80%', backgroundColor: 'white', marginTop: '10px' }}></span>
                     <Box sx={useStyles.socialIcons}>
                         <i className={`fab fa-instagram`} style={useStyles.socialIcon} />
                         <i className={`fab fa-facebook`} style={useStyles.socialIcon} />
@@ -136,8 +136,7 @@ const Page7 = () => {
                     </Box>
                 </Grid>
             </Grid>
-
-            </Box>
+        </Box>
     );
 };
 

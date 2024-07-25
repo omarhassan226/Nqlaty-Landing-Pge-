@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import OrangeArrow from "../../../components/arrow/OrangeArrow";
 import { color } from "../../../colors/colors";
-import { styles } from "../../../styles/styles";
 
 const HeaderSection = () => (
     <Box sx={{ position: "relative", width: "80%" }}>
