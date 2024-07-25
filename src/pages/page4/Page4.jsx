@@ -19,7 +19,7 @@ const Page4 = () => {
                     sx={{
                         display: "flex",
                         justifyContent: { xs: "center", md: "flex-start" },
-                        gap: { xs: "10%", md: "22%" },
+                        gap: { xs: "50px", md: "22%" },
                         width: "80%",
                         flexDirection: { xs: "column", md: "row" },
                     }}

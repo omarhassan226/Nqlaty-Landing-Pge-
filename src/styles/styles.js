@@ -1,4 +1,3 @@
-import zIndex from "@mui/material/styles/zIndex";
 import { color } from "../colors/colors";
 
 export const styles = {
@@ -8,13 +7,14 @@ export const styles = {
         border: "none",
         borderRadius: "20px",
         cursor: "pointer",
-        padding: "10px"
+        padding: "14px"
     },
     OrangeButton: {
         backgroundColor: color.orange,
         color: color.white,
+        padding:'14px',
         border: "none",
-        borderRadius: "5px",
+        borderRadius: "20px",
         cursor: "pointer"
     },
     navbarParent: {
@@ -41,10 +41,9 @@ export const styles = {
     },
     navbarLink: {
         color: color.white,
-        display: "flex",
-        gap: "20px",
+        margin: "0 15px",
+        fontSize: "18px",
         textDecoration: "none",
-        transition: "background-color 0.3s, color 0.3s",
         cursor: "pointer"
     },
     selectedLink: {
@@ -52,6 +51,11 @@ export const styles = {
         color: color.white,
         padding: "10px",
         borderRadius: "20px"
+    },
+    drawerLink: {
+        color: "#000",
+        textDecoration: "none",
+        cursor: "pointer"
     },
     landing: {
         position: "relative",
@@ -88,12 +92,13 @@ export const styles = {
     },
     page2: {
         position: "relative",
+        overflowX: 'hidden',
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
         textAlign: "center",
         backgroundColor: "#383838",
-        width: "100%"
+        width: "100%",
+        height:'150vh'
     },
     selectedArrow: {
         backgroundColor: color.orange,

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Grid, Typography, Button, TextField } from '@mui/material';
-import { styled } from '@mui/system';
 import backgroundImage from '/landing.png';
 import emailIcon from '/email.svg';
 import phoneIcon from '/phone.svg';
@@ -16,6 +15,7 @@ const useStyles = {
     leftSection: {
         textAlign: 'left',
         padding: '20px',
+        marginLeft:'10%'
     },
     logo: {
         marginBottom: '20px',
@@ -42,7 +42,8 @@ const useStyles = {
         flexDirection:'column',
         alignItems:'flex-start',
         textAlign: 'left',
-        paddingLeft:'20px'
+        paddingLeft:'20px',
+        marginLeft:'2.5%'
     },
     subscribeSection: {
         backgroundImage:`url('${backgroundImage}')`,
@@ -82,8 +83,8 @@ const useStyles = {
 
 const Page7 = () => {
     return (
-        <Box sx={useStyles.root}>
-            <Grid container spacing={2} sx={{display:'flex', width:'90%', margin:'0 0 0 auto'}}>
+        <Box id="footer" sx={useStyles.root}>
+            <Grid container spacing={2} sx={{display:'flex', width:'100%', position:'relative', left:'16px'}}>
                 <Grid item xs={12} md={3} sx={useStyles.leftSection}>
                     <img src={logo} alt="Logo" style={useStyles.logo} />
                     <Typography variant="h6" sx={{fontSize:'16px'}}>Nqlyat solutions: the leading shipping platform with superior service quality</Typography>
@@ -105,7 +106,7 @@ const Page7 = () => {
                         <Typography>360.766.0553</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} md={3} className='middleSection' sx={useStyles.middleSection}>
+                <Grid item xs={12} md={2} className='middleSection' sx={useStyles.middleSection}>
                     <Typography variant="h5" sx={{paddingTop:'55px'}}>Company</Typography>
                     <Typography style={{color:color.orange, paddingTop:'30px'}}>Home</Typography>
                     <Typography>Solution</Typography>
@@ -115,7 +116,7 @@ const Page7 = () => {
                     <Typography>News</Typography>
                     <Typography>Contact Us</Typography>
                 </Grid>
-                <Grid item xs={12} md={6} sx={useStyles.subscribeSection}>
+                <Grid item xs={12} md={5.5} sx={useStyles.subscribeSection}>
                     <Typography variant="h5"style={{color:color.orange, paddingTop:'50px', fontWeight:'bold'}}>Subscribe</Typography>
                     <Box display="flex" justifyContent="center" alignItems="center" sx={{width:'80%'}} mt={2}>
                         <TextField

@@ -17,24 +17,27 @@ const Page2 = () => {
         <div id="solutions" style={styles.page2}>
             <Box sx={{ width: "80%", zIndex: "50500550" }}>
                 <Grid
-                    sx={{ display: "flex" }}
+                    sx={{position:'relative', display: "flex", height:'100%', justifyContent:'space-between', alignContent:'center' }}
                     container
                     rowSpacing={1}
-                    columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                    columnSpacing={{ xs: 3, sm: 3, md: 3 }}
                 >
                     <Grid
                         item
-                        xs={5}
+                        xs={12}
+                        sm={12}
+                        md={5}
                         sx={{
                             display: "flex",
                             flexDirection: "column",
-                            gap:'20px'
+                            gap:'20px',
+                            alignContent:'center',
+                            justifyContent:'center',
                         }}
                     >
                         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems:'center' }}>
                             <Box>
                                 <span style={{ fontSize: "80px", color: color.white }}>🡥</span>
-                                <span style={{ color: color.white, opacity:'0.2', position:'absolute',left:'98px', top:'92px',fontSize:'100px' }}>🡥</span>
                             </Box>
                             <Box sx={{ display: "flex", gap: "30px" }}>
                                 <span
@@ -59,7 +62,7 @@ const Page2 = () => {
                                 </span>
                             </Box>
                         </Box>
-                        <Box sx={{textAlign:'left', display:'flex', flexDirection:'column', gap:'20px', color:'white'}}>
+                        <Box sx={{textAlign:'left', display:'flex', flexDirection:'column', gap:'20px', color:'white',alignItems:'center'}}>
                             <h3>
                                 Take advantage of the superior load-loading platforms of
                                 "NQLYATsolutions", which serve intermediaries of all sizes.
@@ -84,22 +87,28 @@ const Page2 = () => {
                             </button>
                         </Box>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={12} md={6} sx={{position:'relative',display:'flex', justifyContent:'center', alignItems:'center', left:'4%'}}>
                         <img
-                            style={{ position: "absolute", left: "75%", bottom: "-4%" }}
-                            width={"25%"}
+                            style={{ position: "absolute",left:'55%',top:'10%' }}
+                            width={"62%"}
                             src="../../../public/productShip2.png"
                             alt=""
                         />
+                            <img
+                                style={{ left:'30%',top:'3%',position:'absolute'  }}
+                                width={"90%"}
+                                src="../../../public/product3.png"
+                                alt=""
+                            />
                         <img
-                            style={{ position: "absolute", left: "64%", bottom: "2%" }}
-                            width={"36%"}
-                            src="../../../public/product3.png"
+                            style={{position: "absolute", top:'0%'  }}
+                            width={"90%"}
+                            src="../../../public/car.png"
                             alt=""
                         />
                         <img
-                            style={{ position: "absolute", left: "50%", bottom: "10%" }}
-                            width={"40%"}
+                            style={{  display:'none'}}
+                            width={"80%"}
                             src="../../../public/car.png"
                             alt=""
                         />

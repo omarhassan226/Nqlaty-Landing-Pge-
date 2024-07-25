@@ -14,6 +14,7 @@ const Page6 = () => {
 
     return (
         <Box
+        id="signUp"
             sx={{
                 backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: "cover",

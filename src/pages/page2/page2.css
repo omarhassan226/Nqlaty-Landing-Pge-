@@ -1,13 +1,8 @@
 
-#solutions {
-    overflow: hidden;
-    position: relative; 
-    height: 120vh;
-}
 .lightPoint {
     position: absolute;
-    top: 45%;
     left: 60%; 
+    top: 45%;
     transform: translateX(-50%); 
     width: 400px;
     height: 400px;
@@ -20,24 +15,29 @@
 
 .shape1 {
     position: absolute;
-    top: 10;
-    width: 80vw;
-    height: 150vh;
-    background-color: #F05326;
-    border-radius: 50%;
-    left: 0%;
-    transform: translateX(-70%);
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #ff6600; 
+    clip-path: ellipse(67% 100% at 8% 50%);
+    transform:  translateX(-20%);
+    z-index: 1;
 }
 
 .shape2 {
     position: absolute;
-    top: 10;
-    width: 80vw;
-    height: 150vh;
-    background-color: #F05326;
-    border-radius: 50%;
+    bottom: 0;
     right: 0;
-    transform: translateX(70%);
+    width: 50%;
+    height: 100%;
+    background-color: #ff6600; 
+    clip-path: ellipse(67% 100% at 8% 50%);
+    z-index: 1;
+    transform: rotate(180deg) translateX(-20%);
 }
+
+
+
 
 

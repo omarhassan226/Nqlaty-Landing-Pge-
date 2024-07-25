@@ -1,6 +1,9 @@
-.css-b95c4k-MuiGrid-root>.MuiGrid-item{
-    padding-left: 40px;
+/* .css-b95c4k-MuiGrid-root>.MuiGrid-item{
+    padding-left: 100px;
 }
 .middleSection{
-    padding-left: 20px;
+    padding-left: 50px;
+} */
+.css-91gpm7-MuiGrid-root>.MuiGrid-item{
+    padding-left: 0
 }
