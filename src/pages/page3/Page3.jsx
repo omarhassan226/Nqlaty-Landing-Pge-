@@ -8,6 +8,7 @@ import Masonry1 from "./components/Masonry1";
 import { color } from "../../colors/colors";
 import LoadingPlatform from "./components/LoadingPlatform";
 
+
 const platformServices = [
     { title: "transportation solutions" },
     { title: "Shipping" },
@@ -53,9 +54,9 @@ const Page3 = () => {
                 style={{ top: "-300px", opacity: "0.2" }}
             ></div>
             <OrangeArrow />
-            <Box sx={{ width: "80%", maxWidth: "1200px" }}>
-                <Grid container spacing={3} justifyContent="center" >
-                    <Grid item xs={12} sm={6} md={4} sx={{ display:'flex'}}>
+            <Box sx={{ width: "100%", display:'flex', justifyContent:'center' }}>
+                <Grid container spacing={3} justifyContent="center" sx={{width:'80%'}} >
+                    <Grid item xs={12} sm={6} md={4} sx={{ display:'flex', paddingLeft:'0px !important'}}>
                         <Card1
                             handleSelectNavbarElement={handleSelectNavbarElement}
                             selected={selected}
@@ -120,7 +121,7 @@ const Page3 = () => {
                 </Grid>
             </Box>
             <Grid container spacing={3} justifyContent="space-between" sx={{ width: "80%", paddingTop:'50px' }}>
-                <Grid item xs={12} sm={12} md={5} sx={{maxWidth:'100%'}}>
+                <Grid item xs={12} sm={12} md={5} sx={{maxWidth:'100%', paddingLeft:'0 !important'}}>
                         <Masonry1 />
                 </Grid>
                 <Grid item xs={12} sm={12} md={5}>

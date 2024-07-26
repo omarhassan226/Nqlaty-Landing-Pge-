@@ -89,19 +89,19 @@ const Page2 = () => {
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} sx={{position:'relative',display:'flex', justifyContent:'center', alignItems:'center', left:'4%'}}>
                         <img
-                            style={{ position: "absolute",left:'55%',top:'10%' }}
-                            width={"62%"}
+                            style={{ position: "absolute",left:'61%',top:'14%' }}
+                            width={"60%"}
                             src="../../../public/productShip2.png"
                             alt=""
                         />
                             <img
-                                style={{ left:'30%',top:'3%',position:'absolute'  }}
-                                width={"90%"}
+                                style={{ left:'37%',top:'10%',position:'absolute'  }}
+                                width={"85%"}
                                 src="../../../public/product3.png"
                                 alt=""
                             />
                         <img
-                            style={{position: "absolute", top:'0%'  }}
+                            style={{position: "absolute", top:'0%',left:'10%'  }}
                             width={"90%"}
                             src="../../../public/car.png"
                             alt=""

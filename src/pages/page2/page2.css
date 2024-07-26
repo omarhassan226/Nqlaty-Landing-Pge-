@@ -37,6 +37,10 @@
     transform: rotate(180deg) translateX(-20%);
 }
 
+.css-1rmojbn-MuiGrid-root>.MuiGrid-item{
+    padding-left: 12px;
+}
+
 
 
 

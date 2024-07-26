@@ -19,7 +19,7 @@ const Page6 = () => {
                 backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                padding: "50px 20px",
+                padding: "50px 0px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -82,7 +82,7 @@ const Page6 = () => {
                                         <div className="inputContainer">
                                             <img  className="inputIcon" src={field.icon}/>
                                             {field.type === "select" ? (
-                                                <select className="inputStyle" name={field.name} id={field.name} ><option value={field.name} disabled selected hidden> <span style={{color:color.cardColor}} >{field.label}</span> </option></select>
+                                                <select className="inputStyle" name={field.name} id={field.name} ><option value={field.name} disabled selected hidden>{field.label} </option></select>
                                             ) : (
                                                 <input className="inputStyle" type={field.type} name={field.name} id={field.name} placeholder={field.label}/>
                                             )}

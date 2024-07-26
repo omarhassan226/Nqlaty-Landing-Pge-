@@ -21,7 +21,7 @@ const ClientTestimonials = () => {
             </Box>
             <Grid container spacing={3} justifyContent="center" sx={{ width: "80%", marginLeft: "0", paddingTop: '50px' }}>
                 {clients.map((client, index) => (
-                    <Grid key={index} md={4} sm={12} sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <Grid item key={index} md={4} sm={12} sx={{ display: 'flex', justifyContent: 'center', paddingLeft:'0 !important' }}>
                         <ClientCard>
                             <Box sx={{ display: "flex", justifyContent: "center", gap: "20px", flexDirection: 'column' }}>
                                 <Box sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", gap: "20px" }}>
