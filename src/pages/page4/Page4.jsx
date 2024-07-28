@@ -1,16 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { styles } from "../../styles/styles";
 import { Box, Grid, Typography, Button } from "@mui/material";
 import { color } from "../../colors/colors";
 import OrangeArrow from "../../components/arrow/OrangeArrow";
 import ServiceCard from "./components/ServiceCard";
+import "./page4.css"
 
 const Page4 = () => {
     const [selected, setSelected] = useState("../../../public/man.png");
 
+    
     const handleSelectedElement = (imageSrc) => {
         setSelected(imageSrc);
     };
+    
+    const handleSetSelected = (shape) => {
+        setSelected(shape);
+    };
+    
+    const [isVisible, setIsVisible] = useState(false);
+    
+    useEffect(() => {
+        const handleScroll = () => {
+            const element = document.getElementById("services");
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    setIsVisible(true);
+                }
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <Box id="services" sx={styles.services}>
@@ -47,7 +70,7 @@ const Page4 = () => {
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
                 <Grid container spacing={2} sx={{ width: '80%' }}>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} className={isVisible? "left-section" : ""}>
                         <ServiceCard
                             handleSelectedElement={handleSelectedElement}
                             selected={selected}
@@ -66,7 +89,7 @@ const Page4 = () => {
                             </Typography>
                         </ServiceCard>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} className={isVisible? "middleSection" : ""}>
                         <ServiceCard
                             handleSelectedElement={handleSelectedElement}
                             selected={selected}
@@ -85,7 +108,7 @@ const Page4 = () => {
                             </Typography>
                         </ServiceCard>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} className={isVisible? "right-section" : ""}>
                         <ServiceCard
                             handleSelectedElement={handleSelectedElement}
                             selected={selected}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import HeaderSection from "./components/HeaderSection";
 import ServiceDescriptions from "./components/ServiceDescriptions";
@@ -16,6 +16,23 @@ const Page5 = () => {
         setSelected(shape);
     };
 
+    const [isVisible, setIsVisible] = useState(false);
+    
+    useEffect(() => {
+        const handleScroll = () => {
+            const element = document.getElementById("about");
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    setIsVisible(true);
+                }
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <Box id="about" sx={styles.about}>
             <img
@@ -23,9 +40,9 @@ const Page5 = () => {
                 src="../../../public/car3.png"
                 alt=""
             />
-            <HeaderSection />
-            <ServiceDescriptions />
-            <AboutCardsSection />
+            <HeaderSection isVisible={isVisible}/>
+            <ServiceDescriptions isVisible={isVisible}/>
+            <AboutCardsSection isVisible={isVisible}/>
             <Button
                 variant="contained"
                 sx={{
@@ -47,7 +64,7 @@ const Page5 = () => {
             >
                 Read More
             </Button>
-            <ClientTestimonials />
+            <ClientTestimonials isVisible={isVisible}/>
             <NavigationArrows selected={selected} handleSetSelected={handleSetSelected} />
             <Box className="shape3"></Box>
             <Box className="shape4"></Box>

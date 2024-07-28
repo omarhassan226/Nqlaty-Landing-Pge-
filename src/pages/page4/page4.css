@@ -1,37 +1,3 @@
-.inputStyle {
-    width: 100%;
-    height: 35px;
-    border: none;
-    border-radius: 5px;
-    padding-left: 45px;
-    transition: border 0.3s ease;
-}
-
-.inputStyle:focus {
-    border: 2px solid orange;
-    outline: none;
-}
-
-.inputLabel {
-    color: white;
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.inputContainer {
-    position: relative;
-}
-
-.inputIcon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10%;
-    color: gray;
-}
-
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100%);

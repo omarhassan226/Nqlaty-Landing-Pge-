@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Grid, useMediaQuery } from "@mui/material";
 import { color } from "../../colors/colors";
 import backgroundImage from "../../../public/productShip.png"; 
@@ -11,6 +11,24 @@ const Page6 = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
     }
+
+    
+    const [isVisible, setIsVisible] = useState(false);
+    
+    useEffect(() => {
+        const handleScroll = () => {
+            const element = document.getElementById("signUp");
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    setIsVisible(true);
+                }
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <Box
@@ -50,7 +68,7 @@ const Page6 = () => {
                     paddingTop: '60px'
                 }}
             >
-                <Grid item xs={12} md={7}>
+                <Grid item xs={12} md={7} className={isVisible ? "left-section" : ""}>
                     <Box
                         sx={{
                             backgroundColor: "rgba(255,255,255, 0.1)",
@@ -112,7 +130,7 @@ const Page6 = () => {
                         </Box>
                     </Box>
                 </Grid>
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} md={5} className={isVisible ? "right-section" : ""}>
                     <Box
                         sx={{
                             display: "flex",

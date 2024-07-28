@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Grid, Typography, Button, TextField } from '@mui/material';
 import backgroundImage from '/landing.png';
 import emailIcon from '/email.svg';
@@ -82,10 +82,28 @@ const useStyles = {
 };
 
 const Page7 = () => {
+
+    const [isVisible, setIsVisible] = useState(false);
+    
+    useEffect(() => {
+        const handleScroll = () => {
+            const element = document.getElementById("footer");
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    setIsVisible(true);
+                }
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <Box id="footer" sx={useStyles.root}>
             <Grid container spacing={2} sx={{ display: 'flex', width: '100%', position: 'relative', left: '16px' }}>
-                <Grid item xs={12} md={3} sx={useStyles.leftSection}>
+                <Grid item xs={12} md={3} sx={useStyles.leftSection} className={isVisible ? "left-section" : ""}>
                     <img src={logo} alt="Logo" style={useStyles.logo} />
                     <Typography variant="h6" sx={{ fontSize: '16px' }}>Nqlyat solutions: the leading shipping platform with superior service quality</Typography>
                     <Typography variant="h5" sx={useStyles.getInTouch}>Get in touch</Typography>
@@ -106,7 +124,7 @@ const Page7 = () => {
                         <Typography>360.766.0553</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} md={2} sx={useStyles.middleSection}>
+                <Grid item xs={12} md={2} sx={useStyles.middleSection} className={isVisible ? "middleSection" : ""}>
                     <Typography variant="h5" sx={{ paddingTop: '55px' }}>Company</Typography>
                     <Typography style={{ color: color.orange, paddingTop: '30px' }}>Home</Typography>
                     <Typography>Solution</Typography>
@@ -116,7 +134,7 @@ const Page7 = () => {
                     <Typography>News</Typography>
                     <Typography>Contact Us</Typography>
                 </Grid>
-                <Grid item xs={12} md={5.5} sx={useStyles.subscribeSection}>
+                <Grid item xs={12} md={5.5} sx={useStyles.subscribeSection} className={isVisible ? "right-section" : ""}>
                     <Typography variant="h5" style={{ color: color.orange, paddingTop: '50px', fontWeight: 'bold' }}>Subscribe</Typography>
                     <Box display="flex" justifyContent="center" alignItems="center" sx={{ width: '80%' }} mt={2}>
                         <TextField

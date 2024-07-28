@@ -1,0 +1,24 @@
+@keyframes page3Card {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.page3Card1 {
+    animation: page3Card 0.8s forwards;
+}
+.page3Card2 {
+    animation: page3Card 1.8s forwards;
+}
+.page3Card3 {
+    animation: page3Card 2.8s forwards;
+}
+.buttonAnimation {
+    animation: page3Card 0.8s forwards;
+}

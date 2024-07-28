@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import OrangeArrow from "../../components/arrow/OrangeArrow";
 import Card1 from "./components/Card1";
 import { Box, Grid } from "@mui/material";
@@ -7,7 +7,6 @@ import "../page2/page2.css";
 import Masonry1 from "./components/Masonry1";
 import { color } from "../../colors/colors";
 import LoadingPlatform from "./components/LoadingPlatform";
-
 
 const platformServices = [
     { title: "transportation solutions" },
@@ -24,6 +23,8 @@ const platformServices = [
 ];
 
 const Page3 = () => {
+
+    const [isVisible, setIsVisible] = useState(false);
     const [selected, setSelected] = useState(
         "Cargo loading platforms from NQLYAT solutions are designed to simplify your operations and keep your cargo in constant motion."
     );
@@ -31,6 +32,21 @@ const Page3 = () => {
     const handleSelectNavbarElement = (text) => {
         setSelected(text);
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const element = document.getElementById("prices");
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    setIsVisible(true);
+                }
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <div
@@ -55,8 +71,8 @@ const Page3 = () => {
             ></div>
             <OrangeArrow />
             <Box sx={{ width: "100%", display:'flex', justifyContent:'center' }}>
-                <Grid container spacing={3} justifyContent="center" sx={{width:'80%'}} >
-                    <Grid item xs={12} sm={6} md={4} sx={{ display:'flex', paddingLeft:'0px !important'}}>
+                <Grid container spacing={3} justifyContent="center" sx={{ width: '80%' }}>
+                    <Grid item xs={12} sm={6} md={4} sx={{ display: 'flex', paddingLeft: '0px !important' }} className={isVisible ? "page3Card1" : ""}>
                         <Card1
                             handleSelectNavbarElement={handleSelectNavbarElement}
                             selected={selected}
@@ -76,7 +92,7 @@ const Page3 = () => {
                             <span style={styles.cardArrow}>🡦</span>
                         </Card1>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} sx={{ display:'flex'}}>
+                    <Grid item xs={12} sm={6} md={4} sx={{ display: 'flex' }} className={isVisible ? "page3Card2" : ""}>
                         <Card1
                             handleSelectNavbarElement={handleSelectNavbarElement}
                             selected={selected}
@@ -97,7 +113,7 @@ const Page3 = () => {
                             <span style={styles.cardArrow}>🡦</span>
                         </Card1>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} sx={{ display:'flex'}}>
+                    <Grid item xs={12} sm={6} md={4} sx={{ display: 'flex' }} className={isVisible ? "page3Card3" : ""}>
                         <Card1
                             handleSelectNavbarElement={handleSelectNavbarElement}
                             selected={selected}
@@ -120,20 +136,20 @@ const Page3 = () => {
                     </Grid>
                 </Grid>
             </Box>
-            <Grid container spacing={3} justifyContent="space-between" sx={{ width: "80%", paddingTop:'50px' }}>
-                <Grid item xs={12} sm={12} md={5} sx={{maxWidth:'100%', paddingLeft:'0 !important'}}>
-                        <Masonry1 />
+            <Grid container spacing={3} justifyContent="space-between" sx={{ width: "80%", paddingTop: '50px' }}>
+                <Grid item xs={12} sm={12} md={5} sx={{ maxWidth: '100%', paddingLeft: '0 !important' }} className={isVisible ? "left-section" : ""}>
+                    <Masonry1 />
                 </Grid>
-                <Grid item xs={12} sm={12} md={5}>
-                        <Box sx={{ textAlign: "left" }}>
-                            <Box sx={{ marginBottom: "20px" }}>
-                                <h1 style={{ color: color.orange }}>NQLYAT Loading Platform</h1>
-                            </Box>
-                            <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start", gap: "20px" }}>
-                                {platformServices.map((service, index) => (
-                                    <LoadingPlatform key={index}>{service.title}</LoadingPlatform>
-                                ))}
-                            </Box>
+                <Grid item xs={12} sm={12} md={5} className={isVisible ? "right-section" : ""}>
+                    <Box sx={{ textAlign: "left" }}>
+                        <Box sx={{ marginBottom: "20px" }}>
+                            <h1 style={{ color: color.orange }}>NQLYAT Loading Platform</h1>
+                        </Box>
+                        <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start", gap: "20px" }}>
+                            {platformServices.map((service, index) => (
+                                <LoadingPlatform key={index}>{service.title}</LoadingPlatform>
+                            ))}
+                        </Box>
                     </Box>
                 </Grid>
             </Grid>
@@ -152,3 +168,5 @@ const Page3 = () => {
 };
 
 export default Page3;
+
+
